@@ -9,15 +9,32 @@ $ yarn add react-preview-file
 
 # Usage
 
+**simple**
+
+```javascript
+import FilePreview from 'react-preview-file';
+
+render() {
+  const file = new File(['someBase64'], 'me.png');
+  return (
+    <FilePreview file={file}>
+      {(preview) => {<img src={preview} />}}
+    </FilePreview>
+  )
+}
+
+```
+
+**full**
+
 ```javascript
 import FilePreview from 'react-preview-file';
 
 class App extends React.Component {
   onInputChange = e => {
     const { currentTarget: { files } } = e;
-    const file = files[0];
 
-    this.setState({file});
+    this.setState({files[0]});
   }
 
   render() {
