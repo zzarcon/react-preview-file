@@ -1,10 +1,10 @@
-# react-file-preview
+# react-preview-file
 > Efficient way of rendering an image preview from a File
 
 # Installation
 
 ```
-$ yarn add react-file-preview
+$ yarn add react-preview-file
 ```
 
 # Motivation
@@ -14,7 +14,7 @@ $ yarn add react-file-preview
 # Usage
 
 ```
-import FilePreview from 'react-file-preview';
+import FilePreview from 'react-preview-file';
 
 class App extends React.Component {
   onInputChange = e => {
@@ -41,3 +41,9 @@ class App extends React.Component {
 }
 
 ```
+
+# API
+
+* **file**: File
+* **children**: (preview: string) => ReactNode
+

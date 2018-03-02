@@ -5,7 +5,7 @@ import FilePreview from '../src';
 describe('FilePreview', () => {
   const setup = () => {
     const file = {} as File;
-    const createObjectURL = jest.fn().mockReturnValue('file-preview');
+    const createObjectURL = jest.fn().mockReturnValue('some-preview');
     const revokeObjectURL = jest.fn(); 
 
     (global as any).URL = {
@@ -29,7 +29,7 @@ describe('FilePreview', () => {
     );
 
     expect(createObjectURL).toBeCalledWith(file);
-    expect(component.find('img').prop('src')).toEqual('file-preview');
+    expect(component.find('img').prop('src')).toEqual('some-preview');
   });
 
   it('should generate a new preview when file prop changes', () => {
@@ -45,7 +45,7 @@ describe('FilePreview', () => {
 
     expect(revokeObjectURL).toHaveBeenCalledTimes(1);
     expect(createObjectURL).toHaveBeenCalledTimes(2);
-    expect(revokeObjectURL).toBeCalledWith('file-preview');
+    expect(revokeObjectURL).toBeCalledWith('some-preview');
     expect(createObjectURL.mock.calls[0][0]).toEqual(file);
     expect(createObjectURL.mock.calls[1][0]).toEqual(newFile);
   });
@@ -61,6 +61,6 @@ describe('FilePreview', () => {
     component.unmount();
 
     expect(revokeObjectURL).toHaveBeenCalledTimes(1);
-    expect(revokeObjectURL).toBeCalledWith('file-preview');
+    expect(revokeObjectURL).toBeCalledWith('some-preview');
   });
 });
