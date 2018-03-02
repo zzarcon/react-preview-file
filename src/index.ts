@@ -1,0 +1,1 @@
+export {FilePreview, FilePreview as default} from './filePreview';
