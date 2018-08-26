@@ -18,7 +18,7 @@ render() {
   const file = new File(['someBase64'], 'me.png');
   return (
     <FilePreview file={file}>
-      {(preview) => {<img src={preview} />}}
+      {(preview) => <img src={preview} />}
     </FilePreview>
   )
 }
@@ -44,9 +44,7 @@ class App extends React.Component {
       <div>
         <input type="file" onChange={this.onChange} />
         <FilePreview file={file}>
-          {(preview) => {
-            <img src={preview} />
-          }}
+          {(preview) => <img src={preview} />}
         </FilePreview>
       </div>
     )
