@@ -1,4 +1,4 @@
-# react-preview-file
+# react-preview-file [![Build Status](https://travis-ci.org/zzarcon/react-preview-file.svg?branch=master)](https://travis-ci.org/zzarcon/react-preview-file)
 > Efficient way of rendering an image preview from a File
 
 # Installation

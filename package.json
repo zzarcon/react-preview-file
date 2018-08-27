@@ -5,48 +5,38 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "start": "webpack -w",
-    "dev": "webpack-dev-server",
-    "test": "jest",
-    "test:ci": "jest --runInBand --coverage",
-    "build": "NODE_ENV=production tsc -p ./tsconfig.prod.json",
-    "release": "npm version patch && git push --tags && git push && npm publish",
-    "prepublishOnly": "yarn test:ci && yarn build"
+    "dev": "ts-react-toolbox dev",
+    "test": "ts-react-toolbox test",
+    "test:ci": "ts-react-toolbox test --runInBand --coverage",
+    "build": "ts-react-toolbox build",
+    "release": "ts-react-toolbox release",
+    "bootstrap": "ts-react-toolbox init",
+    "lint": "ts-react-toolbox lint",
+    "static": "ts-react-toolbox publish",
+    "format": "ts-react-toolbox format",
+    "analyze": "ts-react-toolbox analyze"
   },
-  "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js",
-    "transform": {
-      "^.+\\.(ts|tsx)$": "<rootDir>/preprocessor.js"
-    },
-    "testMatch": [
-      "**/__tests__/*.(ts|tsx)"
-    ],
-    "resetMocks": true
-  },
-  "repository": "git@github.com:zzarcon/react-preview-file.git",
+  "repository": "https://github.com/zzarcon/react-preview-file",
   "author": "Hector Leon Zarco Garcia <hezarco@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "react": "^16.2.0"
+    "react": "^16.3.0"
   },
   "devDependencies": {
-    "@types/enzyme": "^3.1.9",
-    "@types/jest": "^22.1.4",
-    "@types/react": "^16.0.40",
-    "@types/react-dom": "^16.0.4",
-    "awesome-typescript-loader": "^3.4.1",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "jest": "^22.4.2",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "typescript": "^2.7.2",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.11.1"
-  }
+    "ts-react-toolbox": "^0.1.16"
+  },
+  "engines": {
+    "node": ">=8.5.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "react",
+    "file",
+    "preview",
+    "image",
+    "filereader",
+    "createobjecturl"
+  ]
 }

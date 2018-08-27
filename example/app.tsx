@@ -1,11 +1,15 @@
 import * as React from 'react';
 import {Component} from 'react';
+import {GHCorner} from 'react-gh-corner';
 import FilePreview from '../src';
+import { AppWrapper } from './styled';
 
 export interface AppState {
   isPreviewVisible: boolean;
   file?: File;
 }
+
+const repoUrl = 'https://github.com/zzarcon/react-preview-file';
 
 export default class App extends Component <{}, AppState> {
   state: AppState = {
@@ -38,12 +42,13 @@ export default class App extends Component <{}, AppState> {
 
   render() {
     return (
-      <div>
+      <AppWrapper>
+        <GHCorner openInNewTab href={repoUrl} />
         <input id="browse" type="file" onChange={this.onChange} />
         <button onClick={this.onToggle}>Toggle image</button>
         <br/>
         {this.renderPreview()}
-      </div>
+      </AppWrapper>
     )
   }
 }
