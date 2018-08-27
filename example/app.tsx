@@ -2,7 +2,7 @@ import * as React from 'react';
 import {Component} from 'react';
 import {GHCorner} from 'react-gh-corner';
 import FilePreview from '../src';
-import { AppWrapper } from './styled';
+import { AppWrapper, ImgPreview } from './styled';
 
 export interface AppState {
   isPreviewVisible: boolean;
@@ -34,7 +34,7 @@ export default class App extends Component <{}, AppState> {
     return (
       <FilePreview file={file}>
         {(preview) => 
-          <img src={preview} />
+          <ImgPreview src={preview} />
         }
       </FilePreview>
     );
